@@ -1,11 +1,11 @@
 import travelPlansData from "../assets/travel-plans.json";
-import favoriteCard from "./FavoriteCard";
+import FavoriteCard from "./FavoriteCard";
 import TravelCard from "./TravelCard";
 import { useState } from "react";
 
 function TravelList() {
   // Delete button functionality
-  const [travelListArray, setTravelListArray] = useState([...travelPlansData]);
+  const [travelListArray, setTravelListArray] = useState(travelPlansData);
 
   const deleteItemFromList = (card) => {
     setTravelListArray([...travelListArray].filter((element) => element.id !== card.id));
@@ -22,6 +22,7 @@ function TravelList() {
   return (
     <div className="lists-container">
       <div className="travel-list">
+      <h3>Travel list</h3>
         {travelListArray.map((card) => (
           <TravelCard
             key={card.id}
@@ -32,8 +33,9 @@ function TravelList() {
         ))}
       </div>
       <div className="favorites-list">
+        <h3 className="text-iron">Favorites</h3>
         {favoriteListArray.map((card) => (
-          <favoriteCard key={card.id} plan={card} />
+          <FavoriteCard key={card.id} plan={card} />
         ))}
       </div>
     </div>

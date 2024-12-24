@@ -1,4 +1,4 @@
-function favoriteCard({ plan }) {
+function FavoriteCard({ plan }) {
   return (
     <div className="favorite-card">
       <img src={plan.image} alt="City look" />
@@ -10,4 +10,4 @@ function favoriteCard({ plan }) {
   );
 }
 
-export default favoriteCard;
+export default FavoriteCard;
